@@ -20,6 +20,33 @@ fs.readdirSync(partialsDir)
 //   return result;
 // })
 
+Handlebars.registerHelper("RECURSIVE_LIST", (items, indent = null) => {
+  let html = "<ul>";
+  let currentDepth = 0;
+  items.forEach(function (item, i) {
+    const depth =
+      indent && indent[i]
+        ? indent[i]
+        : item.startsWith("-")
+        ? item.match(/^-*/)[0].length
+        : 0;
+    while (depth > currentDepth) {
+      html += "<ul>";
+      currentDepth++;
+    }
+    while (depth < currentDepth) {
+      html += "</ul>";
+      currentDepth--;
+    }
+    html += "<li>" + item.replace(/^-*/, "") + "</li>";
+  });
+  while (currentDepth > 0) {
+    html += "</ul>";
+    currentDepth--;
+  }
+  return new Handlebars.SafeString(html);
+});
+
 Handlebars.registerHelper('MONTH_YEAR', dateString =>
   // https://dockyard.com/blog/2020/02/14/you-probably-don-t-need-moment-js-anymore
   // https://stackoverflow.com/questions/5619202/parsing-a-string-to-a-date-in-javascript
