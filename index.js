@@ -47,14 +47,20 @@ Handlebars.registerHelper("RECURSIVE_LIST", (items, indent = null) => {
   return new Handlebars.SafeString(html);
 });
 
-Handlebars.registerHelper('MONTH_YEAR', dateString =>
+Handlebars.registerHelper('MONTH_YEAR', dateString => {
   // https://dockyard.com/blog/2020/02/14/you-probably-don-t-need-moment-js-anymore
   // https://stackoverflow.com/questions/5619202/parsing-a-string-to-a-date-in-javascript
-  new Date(dateString + "T00:00:00").toLocaleDateString('en-US', {
-    month: 'short',
-    year: 'numeric',
-  })
-);
+  const dateObject = {
+    year: "numeric",
+  };
+  if (isNaN(+dateString)) {
+    dateObject.month = "short";
+  }
+  return new Date(dateString + "T00:00:00").toLocaleDateString(
+    "en-US",
+    dateObject
+  );
+});
 
 Handlebars.registerHelper('IF_DATES_HAVE_SAME_MONTH_AND_YEAR', function (arg1, arg2) {
   // prevents situation where we render same month/date combination
