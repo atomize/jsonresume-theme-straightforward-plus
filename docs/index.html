@@ -8,11 +8,11 @@
   <meta name='viewport' content='width=device-width, minimal-ui'>
   <meta name='resume-version' content='v1.0.0'>
   <style>body {
-  font-family: "Times New Roman", Times, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   /* 13px to 15px looks good */
-  font-size: 15px;
+  font-size: 14px;
   /* 1.38, 1.4, or 1.5 looks good */
-  line-height: 1.4;
+  line-height: 1.38;
   margin: 0 auto;
 }
 
@@ -58,7 +58,7 @@ a {
   justify-content: space-between;
 }
 
-.basics>* {
+.basics > * {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 30%;
@@ -114,8 +114,9 @@ a {
   justify-content: space-between;
 }
 
-#work-block .block-header>*,
-#volunteer .block-header>* {
+#work-block .block-header > *,
+#volunteer .block-header > * {
+  margin-top: 17px;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 30%;
@@ -226,31 +227,25 @@ a {
           </div>
         </div>
         <div class='section-line'></div>
-        <div id='skills' class='section-block'>
-          <div class='section-intro'>
-            <div class='section-name'>
-              <span>SKILLS AND TECH</span>
+        <div id="skills" class="skills">
+          <div class="section-intro">
+            <div class="section-name">
+              <span>
+                SKILLS AND TECH
+              </span>
             </div>
-            <div class='section-intro-line'></div>
+            <div class="section-intro-line"></div>
           </div>
-          <div class='section-content'>
-            <ul class='highlights'>
-                <li>
-                  <span class='title'>Web Development:</span>
-                      <span>HTML</span>, 
-                      <span>CSS</span>, 
-                      <span>Javascript</span>.
-                </li>
-                <li>
-                  <span class='title'>Compression:</span>
-                      <span>Mpeg</span>, 
-                      <span>MP4</span>, 
-                      <span>GIF</span>.
-                </li>
+          <div class="section-content">
+            <ul class="highlights">
+                <span class="title">
+                  FRONTEND:
+                </span>
+                  <ul><li> <span class='title'>Languages: </span><span>Javascript, Typescript, Google Apps Script, HTML, Markdown, CSS.</span></li><li> <span class='title'>Frameworks: </span><span>Vue, React.</span></li><li> <span class='title'>Utilities: </span><span>Webpack, Gulp, vite, npm, yarn.</span></li></ul>
             </ul>
           </div>
         </div>
-        <div class='section-line'></div>
+        <div class="section-line"></div>
         <div id='work-block' class='section-block'>
           <div class='section-intro'>
             <div class='section-name'>
@@ -274,9 +269,7 @@ a {
                 </div>
       
                   <ul class='highlights'>
-                      <li>Build an algorithm for artist to detect if their music was violating copy right infringement laws</li>
-                      <li>Successfully won Techcrunch Disrupt</li>
-                      <li>Optimized an algorithm that holds the current world record for Weisman Scores</li>
+                    <ul><li>Build an algorithm for artist to detect if their music was violating copy right infringement laws</li><li>Successfully won Techcrunch Disrupt</li><ul><li>Optimized an algorithm that holds the current world record for Weisman Scores</li></ul>
                   </ul>
               </div>
           </div>
