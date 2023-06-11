@@ -57,7 +57,16 @@ Handlebars.registerHelper("SKILLS_SECTIONS", (keywords, sections = null) => {
             section[0] +
             ": </span>" +
             "<span>" +
-            keywords.slice(...section[1]).join(", ") +
+            keywords
+              .slice(
+                ...section[1].map((x) => {
+                  if (section[1].indexOf(x) > 0) {
+                    x += 1;
+                  }
+                  return x;
+                })
+              )
+              .join(", ") +
             ".</span></li>"
         )
         .join("") +
