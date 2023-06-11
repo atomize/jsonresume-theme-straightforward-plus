@@ -1,9 +1,9 @@
 body {
-  font-family: "Times New Roman", Times, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   /* 13px to 15px looks good */
-  font-size: 15px;
+  font-size: 14px;
   /* 1.38, 1.4, or 1.5 looks good */
-  line-height: 1.4;
+  line-height: 1.38;
   margin: 0 auto;
 }
 
@@ -49,7 +49,7 @@ a {
   justify-content: space-between;
 }
 
-.basics>* {
+.basics > * {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 30%;
@@ -105,8 +105,9 @@ a {
   justify-content: space-between;
 }
 
-#work-block .block-header>*,
-#volunteer .block-header>* {
+#work-block .block-header > *,
+#volunteer .block-header > * {
+  margin-top: 17px;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 30%;
