@@ -27,9 +27,7 @@
         {{/if}}
         {{#if highlights.length}}
           <ul class='highlights'>
-            {{#each highlights}}
-              <li>{{.}}</li>
-            {{/each}}
+            {{RECURSIVE_LIST highlights indentation}}
           </ul>
         {{/if}}
         {{#unless @last}}
